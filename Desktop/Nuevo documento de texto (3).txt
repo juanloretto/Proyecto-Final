@@ -1,0 +1,16 @@
+Clase CSS
+
+en cascada, le da mas importancia a lo ultimo que hago.
+forma correcta de aplicar css
+creando archivo css y linkearlo al html (carpeta css en node)
+hay 3 formas de escribir colores (ver en documentos de campus))
+etiqueta link (por lo gral bajo etiqueta meta) css en style..,hay que anotar la ruta
+el id siempre es unico, lo apllico al elemento y nada mas en el mismo archivo 
+
+box model :
+contenido...texto? o lo que esta dentro del bloque
+pading:distancia entre xontenido y borrde
+border:borde
+outline: fuera de borde no se ve mucho
+margin: contiene todo diustancia entre padding o outline al resto.
+

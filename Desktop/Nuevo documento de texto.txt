@@ -1,0 +1,79 @@
+
+*HTML es el esqueleto de la pagina
+*CSS es el estilo o elemento e estilo de la pagia
+*JS es el funcionamiento 
+
+
+las primeras dos son de marcado mientras js es lenguaje 
+/indica carpetas
+/js queda vacia por ahora
+/assets imagenes 
+/css vacia por ahora par
+a archivos css
+/pages distribuicion de paginas en el sitio
+
+archivo index.html ejecuta el sitio. si no esta no se cargar
+la pagina si que debe estar en la raiz del proyecto y debe llamarse
+tal cual Index.html
+
+en index.html al poner en vs code poner !
+esto saca etiquetas detro de los ismbolos <>
+hay etiquetas simples o dobles
+
+todos los archivos index comienzan con la misma etiqueta
+la 2da es html lang="en" osea lenguaje e idioma
+
+htmlpag tiene 2 partes:
+head: informacion para el buscador (por ej autor, descripcion ed la pagina, etc)
+body:contiene el cuerpo de la pagina, los elementos visibles a la pagina.
+
+el viewport es el espacio que se ve de nuestro sitio, por ej tomar de ancho el
+ancho de nuestroo dispositivo (paginas responsive)
+
+para formatear(darle forma) click derecho en cualquier lado, format wich con prettier
+keyword indica palabre clave para el navegador encuentre 
+nuestro sitio
+
+BODY:
+con html se ponen etiquetas semanticas que cumplen propocito, no es por estilo.
+Ppor ej: Titulo en H1
+SHIFT+ALT DUPLICA PARA ABAJO(LO COPIA)
+Un solo titulo H1 por pagina. El resto de H pueden ser varios.
+
+lorem ipsu muesra un texto para relleno y vista de tipografia, etc
+solo se puede poner <br/> dentro de la etiqueta <p> que separa parrafos.
+esto separa los parrafos(espacios)
+se utiliza como muchisimo 2 br por pagina. 
+
+<img scr> lleva 2 atributos, la imagen y el otro es que muestra en caso de poder cargarse la imagen.
+para copiar imagen de internet poner copiar direccion de la imagen
+y se inserta dentro de las comillas.
+hay que agregar texto alternativo(descriptivo) que diga algo de la imagen
+
+pagina web destinada a ciegos que desccriba con gpt obras de arte, imagenes en general 
+
+estructura del cuerpo de un sitio web
+header: superior de la pagina, en graql incluye al nav (encabezado y barra de navegacion)
+main: contiene la info y todo de pagina 
+etiqueta section delimita los sectores de mi sitio.
+article contiene mas info dentro de la section.
+la etiqueta ancla o a nos lleva a un enlace, pueden ser einternos o externo al sitio. las internas comienzan con /,
+las externas por ej yooutube.com
+el atributo target _blank me abre el enlace en una nueva pestaña.
+mozilla developer pagina web guia para atributos etiquetas y que hacen
+ctrol + { y se abre una seccion de comentario para poner el como ayuda memoria por ej
+iframe incorporar videos, mapas etc usando el codigo desde compartir
+dentro de parrafos grandes: <b> engloba el texto en negrita. <i> texto en cursiva. 
+<span> seleccionacodigo para css
+footer: pie de pagiuna, en gral info de  la pagina al ultimo
+
+como vemos son etiquetas contenedoras.
+
+
+
+
+
+
+
+
+
