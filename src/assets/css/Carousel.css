@@ -1,0 +1,19 @@
+.carousel-container {
+    max-height: 1200px; /* Ajusta según sea necesario */
+    overflow: hidden; /* Oculta cualquier contenido que sobrepase */
+  }
+  
+  .carousel {
+    height: 600px; /* Asegúrate de que el carrusel tenga una altura específica */
+  }
+  
+  .carousel-item {
+    height: 100%; /* Asegura que los items ocupen toda la altura del carrusel */
+  }
+  
+  .carousel-item img {
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del item */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+  }
+  
