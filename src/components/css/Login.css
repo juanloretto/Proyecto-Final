@@ -1,0 +1,76 @@
+/* Contenedor principal */
+.container-fluid {
+  color: #ffffff;
+  background-color: #1a1a1a;
+  padding: 20px;
+}
+
+/* Alinear el formulario en el centro */
+.vh-100 {
+  height: 100vh;
+}
+
+/* Inputs */
+.form-control {
+  background-color: #575656;
+  color: #ffffff;
+  border: 1px solid #555555;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px 2px #28a745;
+  outline: none;
+  background-color: #908f8f;
+}
+
+/* Botón principal (Login) */
+.btn.custom-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Ajustar tamaño */
+  font-size: 1rem;
+  margin: 0 auto; /* Centrar horizontalmente */
+  display: block; /* Asegurar que ocupe solo su contenido */
+  transition: background-color 0.3s ease;
+}
+
+.btn.custom-btn:hover {
+  background-color: #218838;
+}
+
+/* Botón de nuevo usuario */
+.btn-newUser {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Ajustar tamaño */
+  font-size: 1rem;
+  margin: 0 auto; /* Centrar horizontalmente */
+  display: block; /* Asegurar que ocupe solo su contenido */
+  transition: background-color 0.3s ease;
+}
+
+.btn-newUser:hover {
+  background-color: #218838;
+}
+
+/* Alertas */
+.alert {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsive: Pequeños ajustes */
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+

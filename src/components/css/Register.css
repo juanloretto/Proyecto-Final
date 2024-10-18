@@ -1,0 +1,38 @@
+/* Título */
+h2 {
+  color: #ffffff;
+}
+
+/* Etiquetas */
+.form-label {
+  color: #ffffff;
+}
+
+/* Inputs */
+.form-control {
+  background-color: #575656;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px 2px #28a745;
+}
+
+/* Botones */
+.btn-outline-secondary {
+  background-color: #444;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Ajustar tamaño */
+  font-size: 1rem;
+  margin: 0 auto; /* Centrar horizontalmente */
+  display: block; /* Asegurar que ocupe solo su contenido */
+  transition: background-color 0.3s ease;
+}
