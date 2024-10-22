@@ -1,38 +1,91 @@
-/* Título */
-h2 {
-  color: #ffffff;
+/* Títulos y etiquetas */
+.container-fluid {
+  background-image: url('../assets/vista-campo-futbol-hierba_837074-46586.avif');
+  background-size: cover; /* Cubre todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  height: 100vh; /* Ajusta la altura al 100% de la ventana */
 }
 
-/* Etiquetas */
+h2, 
 .form-label {
   color: #ffffff;
 }
 
-/* Inputs */
+/* Card: Fondo oscuro */
+.card {
+  background-color: #343a40;
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido alineado a la izquierda */
+.card-body {
+  color: #f8f9fa;
+  text-align: left;
+}
+
+/* Inputs: Fondo, bordes y foco */
 .form-control {
   background-color: #575656;
   color: #ffffff;
   border: 1px solid #555555;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 5px 2px #28a745;
+  border-color: #058A41;
+  box-shadow: 0 0 5px 2px #058A41;
+  outline: none;
+  background-color: #908f8f;
 }
 
-/* Botones */
+/* Botones de acción (registrarse, nuevo usuario) */
+.btn {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary,
+.btn-newUser,
+.btn.custom-btn {
+  background-color: #058A41;
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-newUser:hover,
+.btn.custom-btn:hover {
+  background-color: #218838;
+}
+
+/* Botón de mostrar/ocultar contraseña */
 .btn-outline-secondary {
   background-color: #444;
   color: #ffffff;
 }
 
-.btn-primary {
-  background-color: #28a745;
+/* Alertas de error */
+.alert {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  background-color: #dc3545;
   color: white;
-  border: none;
-  padding: 10px 20px; /* Ajustar tamaño */
-  font-size: 1rem;
-  margin: 0 auto; /* Centrar horizontalmente */
-  display: block; /* Asegurar que ocupe solo su contenido */
-  transition: background-color 0.3s ease;
 }
+
+/* Ajustes responsivos */
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
