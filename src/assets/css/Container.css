@@ -1,0 +1,33 @@
+body, html {
+    margin: 0; /* Elimina el margen del body y html */
+    padding: 0; /* Elimina el padding del body y html */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column; /* Mantiene la estructura en columnas en pantallas pequeñas */
+    width: 100vw; /* Ancho completo de la ventana */
+    position: relative; /* Asegúrate de que no haya un posicionamiento inesperado */
+    left: 0; /* Asegura que comience desde el borde izquierdo */
+  }
+  
+  .sidebar {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    max-width: 250px; /* Ancho máximo para el sidebar */
+    background-color: #f4f4f4; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para el sidebar */
+  }
+  
+  .content {
+    flex-grow: 1; /* Hace que el contenido principal ocupe el espacio restante */
+    padding: 20px; /* Espaciado interno */
+  }
+  .ad {
+    background-color: #e9ecef; /* Color de fondo ligero */
+    border: 1px solid #ccc; /* Bordes */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 15px; /* Espacio superior */
+  }
+  
