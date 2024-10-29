@@ -1,9 +1,19 @@
 {
+  "name": "proyectofinal",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
-<<<<<<< HEAD
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
@@ -16,9 +26,5 @@
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
     "vite": "^5.4.8"
-=======
-    "mongoose": "^8.7.3",
-    "moongose": "^1.0.0"
->>>>>>> 1ef7fec (no pued avanzar mas se rompe la cnsola)
   }
 }
