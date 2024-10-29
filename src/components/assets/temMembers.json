@@ -1,0 +1,46 @@
+
+[
+    {
+      "name": "Germán Daniel Guaraz",
+      "role": "CEO",
+      "bio": "Germán tiene más de 10 años de experiencia liderando empresas de Futbol.",
+      "img": "German"
+    },
+    {
+      "name": "Juan Andres Loretto",
+      "role": "CTO",
+      "bio": "Juan es la mente detrás de nuestras soluciones innovadoras.",
+      "img": "Juan"
+    },
+    {
+      "name": "Maximiliano Garza",
+      "role": "COO",
+      "bio": "Maximiliano se encarga de que todas las operaciones funcionen.",
+      "img": "Maxi"
+    },
+    {
+      "name": "Joaquin Garcia Fernandez",
+      "role": "CFO",
+      "bio": "Joaquin maneja las finanzas y asegura el crecimiento sostenible de la empresa.",
+      "img": "Joaquin"
+    },
+    {
+      "name": "Abdel Nahum Castells",
+      "role": "CMO",
+      "bio": "Es experto en marketing digital y estrategia de marca.",
+      "img": "Abdel"
+    },
+    {
+      "name": "Paula",
+      "role": "CHRO",
+      "bio": "Paula gestiona el talento humano y la cultura organizacional",
+      "img": "Paula"
+    },
+    {
+        "name": "Sofia Lourdes Balceda Paz",
+        "role": "CHRO",
+        "bio": "Sofia gestiona el talento humano y la cultura organizacional.",
+        "img": "bb"
+      }
+  ]
+  
