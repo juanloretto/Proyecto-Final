@@ -5,6 +5,7 @@ body {
     color: #ffffff;
     background-image: url('https://img.freepik.com/fotos-premium/vista-campo-futbol-hierba_837074-46586.jpg?semt=ais_hybrid');
     background-size:cover;
+    height:100vh ;
     background-position: center;
     background-repeat: no-repeat;
     /* overflow-x: hidden; */ /*Este lo puse por que tenia un desplazamiento horizontal pero ya lo solucione...*/
