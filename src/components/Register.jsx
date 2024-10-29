@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/Register.css"; // Importamos el archivo CSS para estilos personalizados
+import "../css/Register.css"; 
 
 function Register() {
   const [fullName, setFullName] = useState("");
@@ -40,7 +40,7 @@ function Register() {
     console.log("Registro exitoso:", { fullName, email, phone });
   };
 
-  return (
+  return (   
     <div className="container-fluid vh-100 d-flex align-items-center justify-content-center ">
       <div className="row w-100">
         <div className="col-12 col-lg-6 col-md-8 col-sm-12 mx-auto">

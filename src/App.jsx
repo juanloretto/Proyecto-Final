@@ -1,8 +1,7 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import LoginScreen from "./views/LoginScreen"; // Vista de login
-import RegisterScreen from "./views/RegisterScreen"; // Vista de registro
+import LoginScreen from "./views/LoginScreen";
+import RegisterScreen from "./views/RegisterScreen";
 import Logout from "./components/Logout";
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
       <div className="container text-center mt-5">
         <h1>Complejo La Esférica</h1>
 
-        {/* Menú de navegación */}
         <nav className="m-5">
           <Link to="/login" className="btn btn-secondary m-2">
             Login
@@ -27,12 +25,11 @@ function App() {
           </button>
         </nav>
 
-        {/* Rutas */}
         <Routes>
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/logout" element={<Logout />} />
-          {/* Redirección por defecto a Login */}
+
           <Route path="*" element={<LoginScreen />} />
         </Routes>
       </div>

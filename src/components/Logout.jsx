@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Necesario para la redirección
+import { useNavigate } from 'react-router-dom'; 
 import "../css/Logout.css";
 
 const Logout = () => {
-  const navigate = useNavigate(); // Hook para redirigir a otras rutas
+  const navigate = useNavigate(); 
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Borra el token almacenado
-    localStorage.removeItem('user'); // Borra cualquier info adicional del usuario
-    alert('Saliste de tu cuenta exitosamente 😎'); // Muestra alerta
-    navigate('/login'); // Redirige a la pantalla de Login
+    localStorage.removeItem('token'); 
+    localStorage.removeItem('user'); 
+    alert('Saliste de tu cuenta exitosamente 😎'); 
+    navigate('/login'); 
   };
 
   return (

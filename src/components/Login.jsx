@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../css/Login.css"; // Importamos CSS 
-import fondoImg from '../assets/vista-campo-futbol-hierba_837074-46586.avif'; // Cambia 'tu-imagen.jpg' por el nombre de tu archivo
+import "../css/Login.css"; 
+import fondoImg from '../assets/vista-campo-futbol-hierba_837074-46586.avif'; 
 
 function Login() {
   const [email, setEmail] = useState("");
