@@ -1,6 +1,6 @@
-// src/views/RegisterScreen.jsx
+
 import React from 'react';
-import Register from '../components/Register'; // Componente reutilizado
+import Register from '../components/Register'; 
 
 function RegisterScreen() {
   return (
