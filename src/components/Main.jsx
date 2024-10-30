@@ -6,9 +6,9 @@ import './Main.css';
 const Main = () => {
   const navigate = useNavigate();
 
-  // Función para manejar la navegación al detalle
+  
   const handleReservar = (canchaId) => {
-    navigate(`/detalle`, { state: { canchaId } }); // Pasamos el ID de la cancha
+    navigate(`/detalle`, { state: { canchaId } });
   };
 
   return (
@@ -35,7 +35,7 @@ const Main = () => {
               <div className="card-content">
                 <h3 className="hero-subtitle">Cancha {index + 1}</h3>
                 <p className="card-description">Disfruta de la emoción en nuestra cancha de fútbol, con césped natural de alta calidad y medidas reglamentarias. Perfecta para partidos amistosos, competitivos y entrenamientos.</p>
-                <button className="button" onClick={() => handleReservar(index + 1)}>Reservar Ahora</button> {/* Pasa el ID */}
+                <button className="button" onClick={() => handleReservar(index + 1)}>Reservar Ahora</button> 
               </div>
             </div>
           ))}

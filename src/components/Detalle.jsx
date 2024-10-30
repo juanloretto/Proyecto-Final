@@ -49,24 +49,24 @@ const Detalle = () => {
   const location = useLocation();
   const { canchaId } = location.state || {}; // Obtener el ID de la cancha
 
-  // Buscar la cancha en canchasData por ID
+ 
   const cancha = canchasData.find(c => c.id === canchaId);
 
-  // Si no se encuentra la cancha, se muestra un mensaje de error
+ 
   if (!cancha) {
     return <h1>Cancha no encontrada</h1>;
   }
 
   const handleReservar = (dia, horario) => {
     alert(`Reservaste la ${cancha.nombre} para el ${dia} a las ${horario}`);
-    // Desplazarse a la parte superior
+   
     window.scrollTo(0, 0);
   };
 
-  // Desplazarse a la parte superior al renderizar
+
   useEffect(() => {
-    window.scrollTo(0, 0); // Asegura que la página se desplace hacia arriba al cargar
-  }, [canchaId]); // Ejecutar cada vez que cambia el ID de la cancha
+    window.scrollTo(0, 0); 
+  }, [canchaId]);
 
   return (
     <div className="detalle-container">

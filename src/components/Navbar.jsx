@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Importa Link
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/pelota.png'; 
 
