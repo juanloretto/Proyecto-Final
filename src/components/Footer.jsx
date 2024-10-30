@@ -1,15 +1,17 @@
 import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; 
+
 const Footer = () => {
   return (
     <footer className="footer">
       <section className="footer-content">
         <p>© 2024 Complejo La Esférica</p>
         <ul className="footer-list">
-          <li><a href="/terminos" className="footer-link">Términos y Condiciones</a></li>
-          <li><a href="/privacidad" className="footer-link">Política de Privacidad</a></li>
-          <li><a href="/contacto" className="footer-link">Contacto</a></li>
+          <li><Link to="/terminos" className="footer-link">Términos y Condiciones</Link></li>
+          <li><Link to="/privacidad" className="footer-link">Política de Privacidad</Link></li>
+          <li><Link to="/contacto" className="footer-link">Contacto</Link></li>
         </ul>
       </section>
       <section className="footer-social">

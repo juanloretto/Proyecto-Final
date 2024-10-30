@@ -1,0 +1,85 @@
+/* Detalle.css */
+
+.detalle-container {
+    padding: 40px; /* Espaciado alrededor del contenido */
+    text-align: center; /* Centrar el contenido */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro sin degradado */
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 40px auto; /* Espacio alrededor del contenedor */
+    max-width: 900px; /* Ancho máximo aumentado */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra para efecto elevado */
+    transition: transform 0.3s; /* Transición para efectos */
+}
+
+.detalle-container:hover {
+    transform: translateY(-5px); /* Elevar el contenedor al pasar el mouse */
+}
+
+h1 {
+    color: #cac8c1; /* Color dorado para el título principal */
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+}
+
+.detalle-imagen {
+    width: 100%; /* Ancho completo de la imagen */
+    height: auto; /* Mantener la proporción */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
+    margin-bottom: 20px; /* Espacio inferior */
+    max-width: 900px; /* Ancho máximo para la imagen */
+}
+
+p {
+    color: #ffffff; /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    margin: 15px 0; /* Espacio superior e inferior */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+h2 {
+    color: #c9d1cc; /* Color dorado para el subtítulo */
+    font-size: 2rem; /* Tamaño de fuente */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+h3 {
+    color: #ffffff; /* Color blanco para los subtítulos de las opciones */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    margin: 15px 0; /* Espacio superior e inferior */
+}
+
+ul {
+    list-style-type: none; /* Eliminar el estilo de lista */
+    padding: 0; /* Eliminar padding */
+}
+
+li {
+    background-color: rgba(9, 110, 48, 0.2); /* Fondo ligero para los elementos de la lista */
+    margin: 10px 0; /* Espacio vertical entre elementos de la lista */
+    padding: 10px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+li:hover {
+    background-color: rgba(8, 90, 39, 0.534); /* Cambio de color al pasar el mouse */
+}
+
+button {
+    background-color: #def1e7; /* Color dorado del botón */
+    color: #2d572c; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Padding interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    margin-left: 10px; /* Espacio a la izquierda del botón */
+}
+
+button:hover {
+    background-color: #9282b8; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Elevar ligeramente el botón */
+}

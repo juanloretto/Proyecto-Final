@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Importa Link
 import './Navbar.css';
 import logo from '../assets/pelota.png'; 
-
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
@@ -27,13 +27,13 @@ const Navbar = () => {
       </div>
       <div className="navbar-bottom">
         <ul className={`navbar-list ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="/inicio" className="navbar-link">Inicio</a></li>
-          <li><a href="/canchas" className="navbar-link">Canchas</a></li>
-          <li><a href="/reservas" className="navbar-link">Reservas</a></li>
-          <li><a href="/torneos" className="navbar-link">Torneos</a></li>
-          <li><a href="/reglamento" className="navbar-link">Reglamento</a></li>
-          <li><a href="/precios" className="navbar-link">Precios</a></li>
-          <li><a href="/contacto" className="navbar-link">Contacto</a></li>
+          <li><Link to="/inicio" className="navbar-link">Inicio</Link></li>
+          <li><Link to="/canchas" className="navbar-link">Canchas</Link></li>
+          <li><Link to="/reservas" className="navbar-link">Reservas</Link></li>
+          <li><Link to="/torneos" className="navbar-link">Torneos</Link></li>
+          <li><Link to="/reglamento" className="navbar-link">Reglamento</Link></li>
+          <li><Link to="/precios" className="navbar-link">Precios</Link></li>
+          <li><Link to="/contacto" className="navbar-link">Contacto</Link></li>
         </ul>
       </div>
       <div className="navbar-toggler" onClick={toggleMenu}>
