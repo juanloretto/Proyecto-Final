@@ -15,6 +15,19 @@ const Home = () => {
     }
   }, []);
 
+  // Manejar la acción de cerrar sesión
+  const handleLogout = () => {
+    // Eliminar el token del localStorage
+    localStorage.removeItem("token");
+
+    // Actualizar el estado de isLoggedIn
+    setIsLoggedIn(false);
+
+    // Redirigir al Home
+    navigate("/"); // Esto actualizará el estado en Home
+  };
+
+  // Manejar la acción de redirigir a login
   const handleLoginRedirect = () => {
     navigate('/login'); // Redirigir a la página de login
   };
@@ -26,7 +39,7 @@ const Home = () => {
       {isLoggedIn ? (
         <div>
           <p>Ya estás logueado.</p>
-          <button onClick={handleLoginRedirect} className="btn btn-danger mt-3">
+          <button onClick={handleLogout} className="btn btn-danger mt-3">
             Cerrar Sesión
           </button>
         </div>
@@ -43,3 +56,4 @@ const Home = () => {
 };
 
 export default Home;
+

@@ -49,19 +49,25 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register", // Asegúrate de que la URL sea correcta
+        "http://localhost:3000/api/usuarios", // Ruta actualizada
         {
           nombre: name, // Cambié 'name' a 'nombre' para que coincida con el backend
           email,
           password,
-          rol: role, // El rol sigue siendo 'role'
+          passwordConfirm: confirmPassword, // Confirmación de contraseña
+          rol: role, // Enviar el rol al backend
+          terminos: termsAccepted, // Enviar aceptación de términos
         }
       );
       console.log(response.data);
       navigate("/login"); // Redirigir al usuario al login después del registro
     } catch (error) {
       console.error(error);
-      setError(error.response ? error.response.data.message : "Hubo un error en el registro. Intente nuevamente");
+      setError(
+        error.response
+          ? error.response.data.message
+          : "Hubo un error en el registro. Intente nuevamente"
+      );
     }
   };
 
