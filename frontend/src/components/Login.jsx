@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../css/Login.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../css/Login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -13,10 +13,10 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/api/auth/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
       });
@@ -24,21 +24,21 @@ const Login = () => {
       if (response.ok) {
         // Si la respuesta es exitosa, obtenemos los datos (incluido el token)
         const data = await response.json();
-        console.log('Login exitoso:', data);
+        console.log("Login exitoso:", data);
 
         // Guardar el token en localStorage
-        localStorage.setItem('token', data.token);
+        localStorage.setItem("token", data.token);
 
         // Redirigir al usuario a la página deseada, por ejemplo, el Dashboard
-        navigate('/'); // Cambia esta ruta si es necesario
+        navigate("/"); // Cambia esta ruta si es necesario
       } else {
         // Si la respuesta es un error, mostramos el mensaje correspondiente
         const errorData = await response.json();
         setError(errorData.message);
       }
     } catch (err) {
-      setError('Hubo un error en la solicitud. Intenta de nuevo.');
-      console.error('Error al hacer la solicitud:', err);
+      setError("Hubo un error en la solicitud. Intenta de nuevo.");
+      console.error("Error al hacer la solicitud:", err);
     }
   };
 
@@ -48,7 +48,9 @@ const Login = () => {
         <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto">
           <div className="login-card">
             <div className="card-body">
-              <h3 className="card-title login-title text-center mb-4">Iniciar Sesión</h3>
+              <h3 className="card-title login-title text-center mb-4">
+                Iniciar Sesión
+              </h3>
               {error && <div className="alert alert-danger">{error}</div>}
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
@@ -100,7 +102,14 @@ const Login = () => {
                 >
                   Registrarse
                 </button>
+                <div className="text-center mt-3">
+                {/* Enlace centrado usando clases de Bootstrap */}
+                <a href="/forgot-password" className="d-block">
+                  ¿Olvidaste tu contraseña?
+                </a>
               </div>
+              </div>
+              
             </div>
           </div>
         </div>

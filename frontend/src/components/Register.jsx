@@ -181,7 +181,13 @@ const Register = () => {
                     required
                   />
                   <label className="form-check-label" htmlFor="terms">
-                    Acepto los términos y condiciones
+                    Acepto los{" "}
+                    <a
+                      href="/terms-and-conditions"
+                      className="text-decoration-none"
+                    >
+                      términos y condiciones
+                    </a>
                   </label>
                 </div>
                 <div className="text-center">
