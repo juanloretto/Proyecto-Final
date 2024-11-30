@@ -1,31 +1,60 @@
-import React from 'react';
+import React, { useState } from "react";
+import logo from '../assets/pelota.png';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; 
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    alert(`Te has suscrito con el email: ${email}`);
+    setEmail("");
+  };
+
   return (
-    <footer className="footer">
-      <section className="footer-content">
-        <p>© 2024 Complejo La Esférica</p>
-        <ul className="footer-list">
-          <li><Link to="/terminos" className="footer-link">Términos y Condiciones</Link></li>
-          <li><Link to="/privacidad" className="footer-link">Política de Privacidad</Link></li>
-          <li><Link to="/contacto" className="footer-link">Contacto</Link></li>
-        </ul>
-      </section>
-      <section className="footer-social">
-        <a href="https://www.facebook.com" className="social-icon" aria-label="Facebook">
-          <FaFacebookF />
-        </a>
-        <a href="https://www.instagram.com" className="social-icon" aria-label="Instagram">
-          <FaInstagram />
-        </a>
-        <a href="https://www.twitter.com" className="social-icon" aria-label="Twitter">
-          <FaTwitter />
-        </a>
-      </section>
-    </footer>
+    <div className="main-content">
+      
+      <footer className="footer-container">
+      
+        <section className="footer-top-row">
+          <div className="footer-logo-section">
+            <img src={logo} alt="Logo" className="footer-logo-image" />
+            <h2 className="footer-title">Complejo la Esférica</h2>
+          </div>
+          <div className="footer-social">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon"><FaFacebookF /></a>
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon"><FaTwitter /></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon"><FaInstagram /></a>
+          </div>
+        </section>
+        <section className="footer-middle-section">
+          <div className="footer-subscription">
+            <form onSubmit={handleSubscribe} className="footer-subscription-form">
+              <input 
+                type="email" 
+                placeholder="Introduce tu email"
+                className="footer-subscription-input" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="footer-subscription-button">Únete</button>
+            </form>
+          </div>
+        </section>
+        <section className="footer-links">
+          <ul>
+            <li><a href="/privacy">Política de privacidad</a></li>
+            <li><a href="/terms">Términos y condiciones</a></li>
+            <li><a href="/contact">Contacto</a></li>
+          </ul>
+        </section>
+        <div className="footer-bottom">
+          <p>&copy; Complejo la Esferica {new Date().getFullYear()}.  Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
   );
 };
 
