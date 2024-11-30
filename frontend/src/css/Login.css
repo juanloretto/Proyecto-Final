@@ -1,15 +1,14 @@
-/* Estilos de la tarjeta */
+
 .login-card {
     width: 100%;
     max-width: 500px;
     padding: 30px;
     border-radius: 8px;
-    background-color: #2c2c2c; /* Fondo oscuro para la tarjeta */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra alrededor de la tarjeta */
-    color: #e0e0e0; /* Texto blanco/gris claro para mejor visibilidad */
+    background-color: #2c2c2c; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+    color: #e0e0e0; 
 }
 
-/* Título de la tarjeta */
 .login-title {
     font-size: 1.8em;
     font-weight: bold;
@@ -17,54 +16,51 @@
     margin-bottom: 20px;
 }
 
-/* Estilos de los campos de entrada */
 .form-control {
-    background-color: #6b6b6b; /* Fondo gris oscuro para inputs */
-    color: #e0e0e0; /* Texto claro dentro de los inputs */
-    border: 1px solid #666; /* Borde gris oscuro */
+    background-color: #6b6b6b; 
+    color: #e0e0e0; 
+    border: 1px solid #666; 
 }
 
 .form-control::placeholder {
-    color: #b0b0b0; /* Color del texto de los placeholders en gris */
+    color: #b0b0b0; 
 }
 
-/* Cambiar el color de borde y fondo al hacer foco en el input */
 .form-control:focus {
-    background-color: #555; /* Fondo un poco más claro al enfocar */
+    background-color: #555; 
     color: #ffffff;
-    border-color: #888; /* Borde un poco más claro al enfocar */
+    border-color: #888; 
 }
 
-/* Botón de login */
+
 .btn-primary {
-    background-color: #1d6d6b; /* Fondo verde oscuro */
-    border-color: #1a5c59; /* Borde verde oscuro */
-    color: #ffffff; /* Texto blanco */
+    background-color: #1d6d6b; 
+    border-color: #1a5c59; 
+    color: #ffffff; 
 }
 
 .btn-primary:hover {
-    background-color: #155f5d; /* Fondo más oscuro en hover */
+    background-color: #155f5d; 
     border-color: #134e4b;
 }
 
-/* Botón de mostrar/ocultar contraseña */
 .btn-outline-secondary {
-    color: #e0e0e0; /* Color claro en botón */
-    border-color: #666; /* Borde gris oscuro */
+    color: #e0e0e0; 
+    border-color: #666;
 }
 
 .btn-outline-secondary:hover {
-    background-color: #555; /* Fondo más oscuro en hover */
+    background-color: #555; 
     color: #ffffff;
     border-color: #888;
 }
 
-/* Checkbox y etiqueta de términos y condiciones */
+
 .form-check-input {
-    background-color: #4a4a4a; /* Fondo gris oscuro para checkbox */
+    background-color: #4a4a4a; 
     border-color: #888;
 }
 
 .form-check-label {
-    color: #e0e0e0; /* Texto claro para términos y condiciones */
+    color: #e0e0e0; 
 }

@@ -2,8 +2,8 @@
   background-image: url('../assets/cesped.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* Centra la tarjeta horizontalmente */
-  align-items: center; /* Centra la tarjeta verticalmente */
+  justify-content: center; 
+  align-items: center;
 }

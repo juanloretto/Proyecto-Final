@@ -1,4 +1,4 @@
-const Server = require('./models/server');  // No incluyas la extensión '.js'
+const Server = require('./models/server'); 
 const server = new Server()
 
 server.listen();

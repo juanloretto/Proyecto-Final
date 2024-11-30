@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Register.css";
@@ -10,7 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [role, setRole] = useState("user"); // Nuevo campo de rol
+  const [role, setRole] = useState("user");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -48,26 +47,35 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/usuarios", // Ruta actualizada
+      const response = await fetch(
+        "https://backend-proyecto-final-xuul.onrender.com/api/",
         {
-          nombre: name, // Cambié 'name' a 'nombre' para que coincida con el backend
-          email,
-          password,
-          passwordConfirm: confirmPassword, // Confirmación de contraseña
-          rol: role, // Enviar el rol al backend
-          terminos: termsAccepted, // Enviar aceptación de términos
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: name, 
+            email,
+            password,
+            passwordConfirm: confirmPassword, 
+            rol: role, 
+            terminos: termsAccepted, 
+          }),
         }
       );
-      console.log(response.data);
-      navigate("/login"); // Redirigir al usuario al login después del registro
-    } catch (error) {
-      console.error(error);
-      setError(
-        error.response
-          ? error.response.data.message
-          : "Hubo un error en el registro. Intente nuevamente"
-      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Registro exitoso:", data);
+        navigate("/login"); 
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || "Hubo un error en el registro");
+      }
+    } catch (err) {
+      setError("Hubo un error en la solicitud. Intenta de nuevo.");
+      console.error("Error al hacer la solicitud:", err);
     }
   };
 

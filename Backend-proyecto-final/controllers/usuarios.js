@@ -1,19 +1,18 @@
 const { request, response } = require("express");
 const Usuario = require("../models/usuario.js");
-const bcrypt = require("bcryptjs"); // Usamos bcryptjs para encriptar las contraseñas de forma segura
+const bcrypt = require("bcryptjs"); 
 
-// Obtener usuarios (con paginación)
 const getUsers = async (req = request, res = response) => {
   const { limite = 5, desde = 0 } = req.query;
 
   try {
-    const usuarios = await Usuario.find().limit(Number(limite)).skip(Number(desde)); // Asegurarse de que límite y desde sean números
+    const usuarios = await Usuario.find().limit(Number(limite)).skip(Number(desde)); 
     const total = await Usuario.countDocuments();
 
     res.json({
       total,
       usuarios,
-      message: "Petición GET desde controllers", // Mensaje opcional para depuración
+      message: "Petición GET desde controllers", 
     });
   } catch (error) {
     console.error(error);
@@ -24,12 +23,12 @@ const getUsers = async (req = request, res = response) => {
   }
 };
 
-// Crear un nuevo usuario
+
 const postUser = async (req = request, res = response) => {
   const { nombre, email, password, rol } = req.body;
 
   try {
-    // Verificar si el correo ya está registrado
+    
     const existingUser = await Usuario.findOne({ email });
     if (existingUser) {
       return res.status(400).json({
@@ -37,18 +36,18 @@ const postUser = async (req = request, res = response) => {
       });
     }
 
-    // Encriptar la contraseña
+   
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const usuario = new Usuario({
       nombre,
       email,
-      password: hashedPassword, // Guardamos la contraseña encriptada
+      password: hashedPassword, 
       rol,
     });
 
-    // Guardar en la base de datos
+   
     await usuario.save();
     res.status(201).json({
       message: "Usuario creado con éxito",
@@ -63,19 +62,19 @@ const postUser = async (req = request, res = response) => {
   }
 };
 
-// Actualizar un usuario
+
 const putUser = async (req, res) => {
-  const { id } = req.params;  // ID del usuario a actualizar
-  const { password, _id, email, ...resto } = req.body;  // Excluimos el _id que no debe actualizarse
+  const { id } = req.params; 
+  const { password, _id, email, ...resto } = req.body;
 
   try {
     if (password) {
-      // Encriptar la contraseña solo si se pasa una nueva
+      
       const salt = await bcrypt.genSalt(10);
       resto.password = await bcrypt.hash(password, salt);
     }
 
-    // Actualizar el usuario en la base de datos
+  
     const usuario = await Usuario.findByIdAndUpdate(id, resto, { new: true });
 
     if (!usuario) {
@@ -97,9 +96,9 @@ const putUser = async (req, res) => {
   }
 };
 
-// Eliminar un usuario
+
 const deleteUser = async (req, res) => {
-  const { id } = req.params;  // ID del usuario a eliminar
+  const { id } = req.params;  
 
   try {
     const borrarUsuario = await Usuario.findByIdAndDelete(id);

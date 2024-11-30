@@ -5,31 +5,31 @@ const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-  // Verificar si el token está presente al cargar el componente
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setIsLoggedIn(true); // Usuario está logueado
+      setIsLoggedIn(true); 
     } else {
-      setIsLoggedIn(false); // Usuario no está logueado
+      setIsLoggedIn(false);
     }
   }, []);
 
-  // Manejar la acción de cerrar sesión
+ 
   const handleLogout = () => {
-    // Eliminar el token del localStorage
+   
     localStorage.removeItem("token");
 
-    // Actualizar el estado de isLoggedIn
+    
     setIsLoggedIn(false);
 
-    // Redirigir al Home
-    navigate("/"); // Esto actualizará el estado en Home
+
+    navigate("/"); 
   };
 
-  // Manejar la acción de redirigir a login
+
   const handleLoginRedirect = () => {
-    navigate('/login'); // Redirigir a la página de login
+    navigate('/login'); 
   };
 
   return (

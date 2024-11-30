@@ -5,11 +5,9 @@ const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Eliminar el token del localStorage
     localStorage.removeItem("token");
 
-    // Redirigir al Home
-    navigate("/"); // Redirige al Home al cerrar sesión
+    navigate("/");
   };
 
   return (
@@ -23,4 +21,3 @@ const Logout = () => {
 };
 
 export default Logout;
-

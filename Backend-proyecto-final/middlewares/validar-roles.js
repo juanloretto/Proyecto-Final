@@ -1,12 +1,12 @@
 const esAdminRole = (req, res, next) => {
-    // Verifica si el token ha sido validado previamente
+    
     if (!req.usuario) {
         return res.status(500).json({
             msg: "Se quiere verificar el rol sin validar el token"
         });
     }
 
-    const { rol, nombre } = req.usuario; // Asegúrate de que req.usuario esté definido
+    const { rol, nombre } = req.usuario; 
 
     if (rol !== "ADMIN_ROLE") {
         return res.status(401).json({
@@ -14,7 +14,7 @@ const esAdminRole = (req, res, next) => {
         });
     }
 
-    next(); // Llama a next() para continuar con la siguiente función middleware
+    next(); 
 };
 
 module.exports = { esAdminRole };

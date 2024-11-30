@@ -17,13 +17,11 @@ const {
 } = require("../controllers/usuarios.js");
 const router = Router();
 
-// Ruta GET para obtener usuarios (solo accesible por admin)
 router.get("/", [
   validarJWT,
-  esAdminRole,  // El usuario debe ser admin
+  esAdminRole,  
 ], getUsers);
 
-// Ruta POST para crear un nuevo usuario
 router.post(
   "/",
   [
@@ -54,30 +52,29 @@ router.post(
 );
 
 
-// Ruta PUT para actualizar un usuario por ID
 router.put(
   "/:id",
   [
-    validarJWT,  // Asegurarse de que el usuario esté autenticado
-    check("id", "No es un ID válido").isMongoId(),  // Verificar que el ID sea válido
-    check("id").custom(ConfirmoUsuarioId),  // Verificar si el ID existe en la base de datos
-    check("rol").custom(rolValido),  // Verificar si el rol es válido
-    validarCampos,  // Middleware para validar los campos
+    validarJWT,  
+    check("id", "No es un ID válido").isMongoId(),  
+    check("id").custom(ConfirmoUsuarioId),  
+    check("rol").custom(rolValido),  
+    validarCampos, 
   ],
-  putUser  // Controlador para actualizar un usuario por ID
+  putUser  
 );
 
-// Ruta DELETE para eliminar un usuario por ID
+
 router.delete(
   "/:id",
   [
-    validarJWT,  // Asegurarse de que el usuario esté autenticado
-    esAdminRole,  // Asegurarse de que el usuario sea admin para eliminar otro usuario
-    check("id", "No es un ID válido").isMongoId(),  // Verificar que el ID sea válido
-    check("id").custom(ConfirmoUsuarioId),  // Verificar si el ID existe en la base de datos
-    validarCampos,  // Middleware para validar los campos
+    validarJWT,  
+    esAdminRole,  
+    check("id", "No es un ID válido").isMongoId(),  
+    check("id").custom(ConfirmoUsuarioId),  
+    validarCampos,  
   ],
-  deleteUser  // Controlador para eliminar un usuario por ID
+  deleteUser  
 );
 
 module.exports = router;

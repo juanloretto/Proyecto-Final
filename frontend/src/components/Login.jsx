@@ -13,26 +13,25 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://backend-proyecto-final-xuul.onrender.com/api/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       if (response.ok) {
-        // Si la respuesta es exitosa, obtenemos los datos (incluido el token)
         const data = await response.json();
         console.log("Login exitoso:", data);
 
-        // Guardar el token en localStorage
         localStorage.setItem("token", data.token);
 
-        // Redirigir al usuario a la página deseada, por ejemplo, el Dashboard
-        navigate("/"); // Cambia esta ruta si es necesario
+        navigate("/");
       } else {
-        // Si la respuesta es un error, mostramos el mensaje correspondiente
         const errorData = await response.json();
         setError(errorData.message);
       }
@@ -103,13 +102,11 @@ const Login = () => {
                   Registrarse
                 </button>
                 <div className="text-center mt-3">
-                {/* Enlace centrado usando clases de Bootstrap */}
-                <a href="/forgot-password" className="d-block">
-                  ¿Olvidaste tu contraseña?
-                </a>
+                  <a href="/forgot-password" className="d-block">
+                    ¿Olvidaste tu contraseña?
+                  </a>
+                </div>
               </div>
-              </div>
-              
             </div>
           </div>
         </div>
