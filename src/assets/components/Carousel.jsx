@@ -1,44 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import '../css/Carousel.css';
 
 const Carousel = () => {
+  const images = [
+    {
+      src: "https://img.freepik.com/fotos-premium/estadio-futbol-luces-cancha_846334-521.jpg",
+      alt: "Imagen de fútbol 1",
+      link: "/canchas",
+      title: "¡Juega en la mejor cancha!"
+    },
+    {
+      src: "https://inovafit.com.mx/wp-content/uploads/2018/06/fucho.jpg",
+      alt: "Imagen de fútbol 2",
+      link: "/reservas",
+      title: "¿Estan listos para un torneo?"
+    },
+    {
+      src: "https://img.freepik.com/fotos-premium/cerca-delantero-futbol-listo-patear-pelota-fuego-estadio_207634-7.jpg",
+      alt: "Imagen de fútbol 3",
+      link: "/contacto",
+      title: "Contáctanos para más información"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="carousel-container">
-      <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img 
-              src="https://img.freepik.com/foto-gratis/pelota-futbol-primer-plano-campo-borroso-detras_91128-4659.jpg" 
-              className="d-block w-100" 
-              alt="..." 
-            />
-            <div className="carousel-caption d-none d-md-block">
-              <h2>Complejo La esférica</h2>
-              <p>Descripción del complejo.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img 
-              src="https://img.freepik.com/foto-gratis/pelota-futbol-primer-plano-campo-borroso-detras_91128-4659.jpg" 
-              className="d-block w-100" 
-              alt="..." 
-            />
-          </div>
-          <div className="carousel-item">
-            <img 
-              src="https://img.freepik.com/foto-gratis/pelota-futbol-primer-plano-campo-borroso-detras_91128-4659.jpg" 
-              className="d-block w-100" 
-              alt="..." 
-            />
-          </div>
+      <div className="carousel-slide">
+        <img
+          src={images[currentIndex].src}
+          alt={images[currentIndex].alt}
+          className="carousel-image"
+        />
+        <div className="carousel-overlay">
+          <h2>{images[currentIndex].title}</h2>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
+      </div>
+      <div className="carousel-buttons">
+        <button className="carousel-btn prev" onClick={prevSlide}>
+          &#10094;
         </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
+        <button className="carousel-btn next" onClick={nextSlide}>
+          &#10095;
         </button>
       </div>
     </div>
