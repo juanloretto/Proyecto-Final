@@ -1,36 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../api/axiosConfig';
 
 const AdminReservas = () => {
     const [reservas, setReservas] = useState([]);
     const [nuevaReserva, setNuevaReserva] = useState({ cancha: '', fecha: '', horaInicio: '', horaFin: '' });
 
     useEffect(() => {
-        // Cargar reservas desde el backend al montar el componente
-        axios.get('/api/reservas')
-            .then(response => {
-                if (Array.isArray(response.data)) {
-                    setReservas(response.data);
-                } else {
-                    console.error('La respuesta no es un array:', response.data);
-                }
-            })
-            .catch(error => console.log(error));
+        obtenerReservas();
     }, []);
 
-    const eliminarReserva = (id) => {
-        axios.delete(`/api/reservas/${id}`)
-            .then(() => setReservas(reservas.filter(reserva => reserva.id !== id)))
-            .catch(error => console.log(error));
+    const obtenerReservas = async () => {
+        try {
+            console.log('Haciendo solicitud para obtener reservas...');
+            const response = await axiosInstance.get('/api/reservas');
+            if (Array.isArray(response.data.reservas)) {
+                setReservas(response.data.reservas);
+            } else {
+                console.error('La respuesta no es un array:', response.data);
+            }
+        } catch (error) {
+            console.error('Error al obtener reservas:', error);
+        }
     };
 
-    const agregarReserva = (evento) => {
+    const eliminarReserva = async (id) => {
+        try {
+            await axiosInstance.delete(`/api/reservas/${id}`);
+            setReservas(reservas.filter(reserva => reserva.id !== id));
+        } catch (error) {
+            console.error('Error al eliminar reserva:', error);
+        }
+    };
+
+    const agregarReserva = async (evento) => {
         evento.preventDefault();
-        const reservaConId = { ...nuevaReserva, id: new Date().getTime() };
-        axios.post('/api/reservas', reservaConId)
-            .then(response => setReservas([...reservas, response.data]))
-            .catch(error => console.log(error));
-        setNuevaReserva({ cancha: '', fecha: '', horaInicio: '', horaFin: '' });
+        try {
+            const response = await axiosInstance.post('/api/reservas', nuevaReserva);
+            setReservas([...reservas, response.data]);
+            setNuevaReserva({ cancha: '', fecha: '', horaInicio: '', horaFin: '' });
+        } catch (error) {
+            console.error('Error al agregar reserva:', error);
+        }
     };
 
     const manejarCambio = (evento) => {
@@ -73,8 +83,8 @@ const AdminReservas = () => {
                 <button type="submit">Agregar Reserva</button>
             </form>
             <ul>
-                {Array.isArray(reservas) && reservas.map((reserva, index) => (
-                    <li key={index}>
+                {reservas.map((reserva) => (
+                    <li key={reserva.id}>
                         Cancha: {reserva.cancha}, Fecha: {reserva.fecha}, Hora: {reserva.horaInicio} - {reserva.horaFin}
                         <button onClick={() => eliminarReserva(reserva.id)}>Eliminar</button>
                     </li>

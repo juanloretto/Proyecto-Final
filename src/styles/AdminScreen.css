@@ -10,19 +10,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed; /* Aquí está la clave */
     font-size: 1.2rem;
 }
 
-body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
 
 .content {
     z-index: 1;
@@ -153,3 +144,5 @@ input[type="submit"]:hover, button[type="submit"]:hover {
         max-width: 100%;
     }
 }
+
+button a { color: inherit; /* Hereda el color del botón */ text-decoration: none; /* Elimina el subrayado */ } button a:hover, button a:focus { color: inherit; /* Asegura que el color no cambie al pasar o enfocar */ }
