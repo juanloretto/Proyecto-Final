@@ -1,47 +1,57 @@
-import React, { useState } from 'react';
-import './Navbar.css';
-import logo from '../assets/pelota.png'; 
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
+import logo from "../assets/pelota.png";
 
-
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+const Navbar = ({ isLoggedIn, onLoginClick, onLogout }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsOpen(!isOpen);
+  };
+
+  const handleLoginClick = () => {
+    if (isLoggedIn) {
+      onLogout();
+      alert("Has cerrado sesión");
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-top">
-        <div className="navbar-logo-container">
-          <img src={logo} alt="Logo" className="navbar-logo" />
-          <h2 className="navbar-title">Complejo La Esférica</h2>
+    <header className="nb-container">
+      <section className="nb-top">
+        <div className="nb-logo-title">
+          <div className="nb-logo">
+            <img src={logo} alt="Logo" className="nb-logo-img" />
+          </div>
+          <h1 className="nb-title">Complejo la Esférica</h1>
         </div>
-        <div className="search-container">
-          <input type="text" className="search-input" placeholder="Buscar..." />
-          <i className="fa fa-search search-icon"></i>
+        <button className="nb-login-button" onClick={handleLoginClick}>
+          {isLoggedIn ? "Cerrar Sesión" : "Iniciar Sesión"}
+        </button>
+        <div className="nb-hamburger" onClick={toggleMenu}>
+          <div className={`nb-line ${isOpen ? "nb-open" : ""}`}></div>
+          <div className={`nb-line ${isOpen ? "nb-open" : ""}`}></div>
+          <div className={`nb-line ${isOpen ? "nb-open" : ""}`}></div>
         </div>
-        <div className="auth-buttons">
-          <button className="login-button">Login</button>
-        </div>
-      </div>
-      <div className="navbar-bottom">
-        <ul className={`navbar-list ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="/inicio" className="navbar-link">Inicio</a></li>
-          <li><a href="/canchas" className="navbar-link">Canchas</a></li>
-          <li><a href="/reservas" className="navbar-link">Reservas</a></li>
-          <li><a href="/torneos" className="navbar-link">Torneos</a></li>
-          <li><a href="/reglamento" className="navbar-link">Reglamento</a></li>
-          <li><a href="/precios" className="navbar-link">Precios</a></li>
-          <li><a href="/contacto" className="navbar-link">Contacto</a></li>
+      </section>
+      <nav className={`nb-bottom ${isOpen ? "nb-active" : ""}`}>
+        <ul className="nb-links">
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/canchas">Canchas</Link></li>
+          <li><Link to="/reservas">Reservas</Link></li>
+          <li><Link to="/reglamento">Reglamento</Link></li>
+          <li><Link to="/contacto">Contacto</Link></li>
+          {isLoggedIn && (
+            <li><Link to="/mi-cuenta" className="nb-account-link">Mi Cuenta</Link></li>
+          )}
         </ul>
-      </div>
-      <div className="navbar-toggler" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
