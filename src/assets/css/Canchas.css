@@ -1,0 +1,118 @@
+.canchas-page {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #0d35153d;
+    color: #ffffff;
+    margin-bottom: 40px;
+  }
+  
+  .canchas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .card {
+    background-color: rgba(31, 65, 35, 0.514);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #034b0d;
+    transform: scale(1.05);
+  }
+  
+  .view-all-button-container {
+    margin-top: 40px;
+  }
+  
+  .view-all-button {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .view-all-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 1.5rem;
+    }
+  
+    .card-content h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card-content p {
+      font-size: 0.9rem;
+    }
+  
+    .view-all-button {
+      font-size: 16px;
+    }
+  }
+  

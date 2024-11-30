@@ -1,0 +1,114 @@
+/* src/pages/Reglamento.css */
+
+.reglamento-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: 40px auto;
+  color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.75); /* Fondo con mayor transparencia */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra sutil y difusa */
+  backdrop-filter: blur(6px); /* Efecto de desenfoque */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reglamento-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5); /* Mayor sombra al pasar el mouse */
+}
+
+.reglamento-container h2 {
+  text-align: center;
+  color: #00d9a3; /* Color de título más vibrante */
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); /* Sombra para el título */
+}
+
+.reglamento-section {
+  margin-top: 30px;
+  border-left: 5px solid #00d9a3; /* Línea decorativa más gruesa */
+  padding-left: 25px;
+  background: rgba(255, 255, 255, 0.08); /* Fondo translúcido */
+  border-radius: 10px;
+  padding: 20px;
+  transition: background 0.3s ease;
+}
+
+.reglamento-section:hover {
+  background: rgba(255, 255, 255, 0.15); /* Cambio de fondo al pasar el mouse */
+}
+
+.reglamento-section h3 {
+  color: #00d9a3;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.reglamento-section h3::before {
+  /* content: "⚽"; */
+  position: absolute;
+  left: -30px;
+  color: #00d9a3;
+  font-size: 1.4em;
+}
+
+.reglamento-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reglamento-section li {
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #d3d3d3;
+  transition: color 0.3s ease;
+}
+
+.reglamento-section li:hover {
+  color: #ffffff; /* Cambio de color al pasar el mouse */
+}
+
+.reglamento-section li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00d9a3;
+  font-size: 1.3em;
+  transform: translateY(-2px); /* Ajuste de posición */
+}
+
+.reglamento-container p {
+  font-size: 1.2em;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media (max-width: 768px) {
+  .reglamento-container {
+    padding: 25px;
+    margin: 20px 15px;
+  }
+
+  .reglamento-container h2 {
+    font-size: 1.9em;
+  }
+
+  .reglamento-section h3 {
+    font-size: 1.3em;
+  }
+
+  .reglamento-section li {
+    font-size: 1em;
+  }
+}
