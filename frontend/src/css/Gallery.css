@@ -1,0 +1,177 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor general de la galería */
+.gallery-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #2d2d2d; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    border-radius: 10px;
+    min-height: 100vh; /* Para que ocupe toda la pantalla */
+}
+
+/* Carrusel (imágenes y texto) */
+.carousel {
+    background-color: #333; /* Fondo oscuro para el carrusel */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Carrusel de texto */
+.carousel-text {
+    background-color: #444; /* Fondo oscuro para que se asemeje al resto del sitio */
+    color: white; /* Texto blanco */
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    min-height: 100px; /* Ajusta la altura mínima para que se vea bien */
+}
+
+.carousel-text footer {
+    font-style: italic;
+    margin-top: 2px;
+    font-size: 1.1rem;
+}
+
+/* Estilos para el carrusel de texto sin botones y margen superior */
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+    display: none; /* Ocultar los botones de navegación para el carrusel de texto */
+}
+
+/* Aseguramos que los controles para las imágenes estén visibles */
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+    display: block; /* Asegura que los botones de navegación estén disponibles para el carrusel de imágenes */
+    top: 65%; /* Ubica los botones en el centro vertical */
+    transform: translateY(-50%); /* Ajusta la posición para que estén centrados exactamente */
+}
+
+/* Espaciado y estilización de las imagenes en los carruseles */
+.carousel-item {
+    padding: 20px 0; /* Asegura que el texto no esté pegado al borde */
+}
+
+.carousel .carousel-inner {
+    margin-top: 5px; /* Margen superior de 20px */
+}
+
+/* Título entre el carrusel y las tarjetas */
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Estilos generales de las cards */
+.card {
+    background-color: #444; /* Fondo oscuro para las cards */
+    color: white; /* Texto blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra de las cards */
+    border: 2px solid rgb(107, 107, 107); /* Borde personalizado */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de hover para hacer que crezcan un poco */
+}
+
+/* Estilos para las imágenes de las cards */
+.card-img-top {
+    object-fit: cover;
+    height: 200px; /* Tamaño fijo para las imágenes de las tarjetas */
+}
+
+/* Asegurarse de que las cards estén alineadas correctamente */
+.row {
+    margin: 0 auto;
+}
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-deck .card {
+    flex: 1 0 calc(33.33% - 20px); /* Tres cards por fila */
+    max-width: calc(33.33% - 20px); /* Tres cards por fila */
+}
+
+.card-deck .card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Botón de las cards */
+.card-button {
+    background-color: #28a745; /* Botón verde */
+    color: white; /* Texto blanco en el botón */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto; /* Centra el botón */
+}
+
+.card-button:hover {
+    background-color: #218838; /* Un verde más oscuro al pasar el ratón */
+    transition: background-color 0.3s;
+}
+
+
+/* Estilos para el carrusel de comentarios */
+.customer-comments-carousel {
+    margin: 10px auto;
+    max-width: 800px;
+    padding: 5px;
+    background-color: #333; /* Fondo oscuro */
+    border: 2px solid #28a745; /* Borde verde */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height: 200px; /* Altura fija para el carrusel */
+    overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar los comentarios dentro del carrusel */
+}
+
+/* Estilo para los comentarios dentro del carrusel */
+.customer-comment {
+    text-align: center; /* Centrar el texto */
+    color: white; /* Texto blanco */
+    flex: 1; /* Para que el comentario ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Nombre del cliente en negrita */
+.customer-comment strong {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block; /* Para que se muestre en su propia línea */
+    margin-bottom: 10px;
+}
+
+/* Comentario en cursiva */
+.customer-comment p {
+    font-style: italic;
+    font-size: 1.1rem;
+    word-wrap: break-word; /* Ajusta el texto dentro del contenedor */
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+    max-height: 100px; /* Limita la altura máxima del texto */
+}
