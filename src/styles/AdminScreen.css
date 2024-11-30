@@ -1,5 +1,3 @@
-/* AdminScreen.css */
-
 body {
     display: flex;
     justify-content: flex-start;
@@ -10,7 +8,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed; /* Aquí está la clave */
+    background-attachment: fixed; 
     font-size: 1.2rem;
 }
 
@@ -29,11 +27,11 @@ nav ul {
     margin: 20px 0;
     list-style-type: none;
     display: flex;
-    gap: 10px; /* Añadir espacio entre los botones */
+    gap: 10px; 
 }
 
 nav ul li {
-    flex: 1; /* Asegura que los botones se distribuyan equitativamente */
+    flex: 1; 
 }
 
 button {
@@ -42,7 +40,7 @@ button {
     border: 2px solid white;
     border-radius: 10px;
     padding: 12px 24px;
-    font-size: 2vw; /* Ajusta el tamaño de la fuente de los botones */
+    font-size: 2vw; 
     margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -62,18 +60,17 @@ button:focus, button:active {
 
 a {
     text-decoration: none;
-    color: inherit; /* Mantener color blanco en los enlaces */
+    color: inherit; 
     display: inline-block;
     width: 100%;
-    text-align: center; /* Asegura que el texto esté centrado */
-    font-size: inherit; /* Hereda el tamaño de fuente del botón */
+    text-align: center; 
+    font-size: inherit; 
 }
 
 .panelAdmin {
     margin-left: 15px;
 }
 
-/* Estilo para formularios */
 form {
     display: flex;
     flex-direction: column;
@@ -107,7 +104,6 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     transform: scale(1.05);
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
     body {
         font-size: 1rem;
@@ -118,7 +114,7 @@ input[type="submit"]:hover, button[type="submit"]:hover {
         font-size: 0.9rem;
     }
     button, input[type="submit"], button[type="submit"] {
-        font-size: 2.5vw; /* Ajusta el tamaño de la fuente en los botones */
+        font-size: 2.5vw; 
         padding: 10px 20px;
     }
     form {
@@ -137,7 +133,7 @@ input[type="submit"]:hover, button[type="submit"]:hover {
         font-size: 0.8rem;
     }
     button, input[type="submit"], button[type="submit"] {
-        font-size: 3vw; /* Ajusta el tamaño de la fuente en los botones */
+        font-size: 3vw; 
         padding: 8px 16px;
     }
     form {
@@ -145,4 +141,4 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     }
 }
 
-button a { color: inherit; /* Hereda el color del botón */ text-decoration: none; /* Elimina el subrayado */ } button a:hover, button a:focus { color: inherit; /* Asegura que el color no cambie al pasar o enfocar */ }
+button a { color: inherit; text-decoration: none; } button a:hover, button a:focus { color: inherit; }

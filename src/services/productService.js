@@ -1,5 +1,4 @@
-import axiosInstance from '../api/axiosConfig';  // Usa la instancia de axios configurada
-
+import axiosInstance from '../api/axiosConfig'; 
 export const getProducts = async () => {
   try {
     const response = await axiosInstance.get('/api/productos');

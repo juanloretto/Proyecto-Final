@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../api/axiosConfig'; // Asegúrate de que 'axiosConfig' está configurado correctamente
+import axiosInstance from '../api/axiosConfig'; 
 import { Button, Modal, Form } from 'react-bootstrap';
-import { getAuthToken } from '../auth'; // Importar la función getAuthToken
+import { getAuthToken } from '../auth'; 
 
 const AdminUsuarios = () => {
     const [usuarios, setUsuarios] = useState([]);
@@ -15,7 +15,7 @@ const AdminUsuarios = () => {
     }, []);
     const obtenerUsuarios = async () => {
         try {
-            const token = getAuthToken(); // Usar la función getAuthToken para obtener el token
+            const token = getAuthToken(); 
             if (!token) {
                 console.error('Token no disponible');
                 return;
@@ -53,7 +53,7 @@ const AdminUsuarios = () => {
         }
 
         try {
-            const token = getAuthToken(); // Usar la función getAuthToken para obtener el token
+            const token = getAuthToken(); 
             const response = await axiosInstance.post('/api/usuarios', nuevoUsuario, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const AdminUsuarios = () => {
     const eliminarUsuario = async (id) => {
         console.log("Intentando eliminar usuario con ID:", id);
         try {
-            const token = getAuthToken(); // Usar la función getAuthToken para obtener el token
+            const token = getAuthToken(); 
             const response = await axiosInstance.delete(`/api/usuarios/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -98,7 +98,6 @@ const AdminUsuarios = () => {
             return;
         }
 
-        // Validar datos
         const { nombre, email, password, rol, status } = usuarioEditando;
         if (!nombre || !email || !rol) {
             console.error("Todos los campos son obligatorios");
@@ -120,7 +119,7 @@ const AdminUsuarios = () => {
         }
 
         try {
-            const token = getAuthToken(); // Usar la función getAuthToken para obtener el token
+            const token = getAuthToken(); 
             const response = await axiosInstance.put(`/api/usuarios/${id}`, {
                 nombre,
                 email,
@@ -150,7 +149,7 @@ const AdminUsuarios = () => {
     };
 
     const editarUsuario = (usuario) => {
-        setUsuarioEditando({ ...usuario, password: '' });  // Vaciar el campo de contraseña para introducir una nueva
+        setUsuarioEditando({ ...usuario, password: '' });  
         setModalIsOpen(true);
     };
 
@@ -164,7 +163,7 @@ const AdminUsuarios = () => {
 
     const toggleStatusUsuario = async (usuario) => {
         try {
-            const token = getAuthToken(); // Usar la función getAuthToken para obtener el token
+            const token = getAuthToken(); 
             const response = await axiosInstance.put(`/api/usuarios/${usuario._id}`, {
                 ...usuario,
                 status: !usuario.status

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Modal, Form } from 'react-bootstrap';
-import { getAuthToken } from '../auth'; // Importar la función getAuthToken
+import { getAuthToken } from '../auth'; 
 
 const AdminProductos = () => {
     const [productos, setProductos] = useState([]);
@@ -15,7 +15,7 @@ const AdminProductos = () => {
 
     const obtenerProductos = async () => {
         try {
-            const token = getAuthToken(); // Usar la función getAuthToken para obtener el token
+            const token = getAuthToken(); 
             if (!token) {
                 console.error('Token no disponible');
                 return;
@@ -35,8 +35,6 @@ const AdminProductos = () => {
             }
         }
     };
-
-    // Resto del código permanece igual
 
 
     const agregarProducto = async (evento) => {
@@ -89,7 +87,6 @@ const AdminProductos = () => {
             return;
         }
 
-        // Validar datos
         const { nombre, precio, imagen, categoria } = productoEditando;
         if (!nombre || !precio || !categoria) {
             console.error("El nombre, el precio y la categoría son obligatorios");
