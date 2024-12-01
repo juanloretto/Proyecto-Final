@@ -1,0 +1,52 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    height: 100vh;
+    background-image: url(); /*Cambiar el background de ser necesario xD pero dejo el que esta por defecto*/
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-container {
+    padding: 0; 
+    max-width: 700px; 
+    height: 400px;
+    text-align: center; 
+}
+
+.error-title {
+    color: #ffffff; 
+    font-size: 150px; 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+    background: linear-gradient(45deg, #edf0f0, #beb8be); 
+    color: transparent; 
+    background-clip: text; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.error-message {
+    color: #ffffff; 
+    font-size: 25px; 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+    background: linear-gradient(45deg, #edf0f0, #beb8be); 
+    background-clip: text; 
+    transition: all 0.3s ease-in-out;  
+}
+
+.error-link {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: #c82333; 
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.error-link:hover {
+    background-color: rgba(255, 255, 255, 0.6); 
+}

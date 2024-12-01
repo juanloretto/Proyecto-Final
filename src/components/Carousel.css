@@ -1,0 +1,78 @@
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    max-height: 600px;
+    margin: 0 auto; 
+    overflow: hidden; 
+    border-radius: 50px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50;
+  }
+  
+  .carousel-track {
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+  }
+  
+  .carousel-slide {
+    min-width: 100%; 
+    position: relative; 
+  }
+  
+  .carousel-image {
+    width: 100%; 
+    border-radius: 15px;
+    object-fit: cover; 
+    height: 500px; 
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: rgba(255, 255, 255, 0.9); 
+    color: #333; 
+    border: none; 
+    cursor: pointer; 
+    padding: 12px; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    z-index: 1; 
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .carousel-btn:hover {
+    background: #007bff;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .prev-btn {
+    left: 15px; 
+  }
+  
+  .next-btn {
+    right: 15px; 
+  }
+  
+  .carousel-indicators {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 15px; 
+  }
+  
+  .indicator {
+    width: 14px; 
+    height: 14px; 
+    border-radius: 50%; 
+    background: #ccc; 
+    border: none; 
+    cursor: pointer; 
+    margin: 0 6px; 
+    transition: background 0.3s ease; 
+  }
+  
+  .indicator.active {
+    background: #007bff; 
+  }
+  
